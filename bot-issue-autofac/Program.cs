@@ -41,7 +41,6 @@ namespace bot_issue_autofac
                 using (var scope = Conversation
                     .Container.BeginLifetimeScope(DialogModule.LifetimeScopeTag, Configure)) // This overload is the issue
                 {
-                    var l1 = scope.ComponentRegistry;
                     scope.Resolve<IMessageActivity>
                         (TypedParameter.From((IMessageActivity)activity));
                     DialogModule_MakeRoot.Register
